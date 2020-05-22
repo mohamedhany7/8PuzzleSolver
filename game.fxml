@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="puzzle.GameController">
+   <children>
+      <ImageView fitHeight="122.0" fitWidth="198.0" layoutX="12.0" layoutY="10.0">
+         <image>
+            <Image url="@8Puzzle_logo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="block0" disable="true" graphicTextGap="40.0" layoutX="400.0" layoutY="125.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="119.0" style="-fx-background-color: #00bfff;" textAlignment="CENTER">
+         <font>
+            <Font name="Wingdings 2" size="57.0" />
+         </font></Button>
+      <Button fx:id="block1" disable="true" graphicTextGap="40.0" layoutX="520.0" layoutY="125.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="119.0" textAlignment="CENTER">
+         <font>
+            <Font name="Wingdings 2" size="57.0" />
+         </font></Button>
+      <Button fx:id="block2" disable="true" graphicTextGap="40.0" layoutX="640.0" layoutY="125.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="119.0" textAlignment="CENTER">
+         <font>
+            <Font name="Wingdings 2" size="57.0" />
+         </font></Button>
+      <Button fx:id="block3" disable="true" graphicTextGap="40.0" layoutX="400.0" layoutY="249.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="119.0" textAlignment="CENTER">
+         <font>
+            <Font name="Wingdings 2" size="57.0" />
+         </font></Button>
+      <Button fx:id="block4" disable="true" graphicTextGap="40.0" layoutX="520.0" layoutY="249.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="119.0" textAlignment="CENTER">
+         <font>
+            <Font name="Wingdings 2" size="57.0" />
+         </font></Button>
+      <Button fx:id="block5" disable="true" graphicTextGap="40.0" layoutX="640.0" layoutY="249.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="119.0" textAlignment="CENTER">
+         <font>
+            <Font name="Wingdings 2" size="57.0" />
+         </font></Button>
+      <Button fx:id="block6" disable="true" graphicTextGap="40.0" layoutX="400.0" layoutY="373.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="119.0" textAlignment="CENTER">
+         <font>
+            <Font name="Wingdings 2" size="57.0" />
+         </font></Button>
+      <Button fx:id="block7" disable="true" graphicTextGap="40.0" layoutX="520.0" layoutY="373.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="119.0" textAlignment="CENTER">
+         <font>
+            <Font name="Wingdings 2" size="57.0" />
+         </font></Button>
+      <Button fx:id="block8" disable="true" graphicTextGap="40.0" layoutX="640.0" layoutY="373.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="119.0" textAlignment="CENTER">
+         <font>
+            <Font name="Wingdings 2" size="57.0" />
+         </font></Button>
+      <Button fx:id="solve2" alignment="CENTER" contentDisplay="CENTER" layoutX="400.0" layoutY="546.0" mnemonicParsing="false" onAction="#solve" prefHeight="31.0" prefWidth="357.0" style="-fx-background-radius: 1000; -fx-background-color: #ff0040;" text="SOLVE" visible="false">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="txt" editable="false" layoutX="54.0" layoutY="209.0" prefHeight="371.0" prefWidth="198.0" promptText="NO PATH YET" visible="false">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></TextArea>
+      <Button fx:id="cost" alignment="CENTER" contentDisplay="CENTER" layoutX="667.0" layoutY="51.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="119.0" style="-fx-background-radius: 1000; -fx-background-color: #ff0040;" text="0" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Text fx:id="txt2" fill="#ff0040" layoutX="213.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BFS" textAlignment="CENTER" visible="false" wrappingWidth="231.99996337890627">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt1" fill="#c7c3c3" layoutX="253.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ALGORITHM" visible="false">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt3" fill="#c7c3c3" layoutX="60.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PATH" visible="false">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt4" fill="#c7c3c3" layoutX="693.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COST" visible="false">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#da6415" layoutX="151.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#ffdd00" layoutX="167.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#300ddf" layoutX="177.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#07ed5f" layoutX="192.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="U">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#f218ef" layoutX="212.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Z">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#f218ef" layoutX="231.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Z">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#ffdd00" layoutX="248.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text fill="RED" layoutX="262.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Button fx:id="num0" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="290.0" mnemonicParsing="false" onAction="#action0" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 1000; -fx-background-color: #0080ff;" text="0" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="num1" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="290.0" mnemonicParsing="false" onAction="#action1" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 1000; -fx-background-color: #0080ff;" text="1" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="num2" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="290.0" mnemonicParsing="false" onAction="#action2" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 1000; -fx-background-color: #0080ff;" text="2" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="num3" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="350.0" mnemonicParsing="false" onAction="#action3" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 1000; -fx-background-color: #0080ff;" text="3" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="num4" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="350.0" mnemonicParsing="false" onAction="#action4" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 1000; -fx-background-color: #0080ff;" text="4" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="num5" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="350.0" mnemonicParsing="false" onAction="#action5" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 1000; -fx-background-color: #0080ff;" text="5" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="num6" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="410.0" mnemonicParsing="false" onAction="#action6" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 1000; -fx-background-color: #0080ff;" text="6" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="num7" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="410.0" mnemonicParsing="false" onAction="#action7" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 1000; -fx-background-color: #0080ff;" text="7" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="num8" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="410.0" mnemonicParsing="false" onAction="#action8" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 1000; -fx-background-color: #0080ff;" text="8" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="solve" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="400.0" layoutY="545.0" mnemonicParsing="false" onAction="#next" prefHeight="42.0" prefWidth="358.0" style="-fx-background-radius: 1000; -fx-background-color: #ff0040;" text="READY?">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <HBox id="type" alignment="CENTER" layoutX="398.0" layoutY="499.0" prefHeight="46.0" prefWidth="364.0">
+         <children>
+            <RadioButton fx:id="bfsRadio" mnemonicParsing="false" onAction="#setMode" prefHeight="18.0" prefWidth="70.0" selected="true" text="BFS   " textFill="#a0a2ab" visible="false" wrapText="true">
+               <toggleGroup>
+                  <ToggleGroup fx:id="mode" />
+               </toggleGroup>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="dfsRadio" mnemonicParsing="false" onAction="#setMode" prefHeight="18.0" prefWidth="70.0" text="DFS   " textFill="#a0a2ab" toggleGroup="$mode" visible="false" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="Manhattan" mnemonicParsing="false" onAction="#setMode" prefHeight="18.0" prefWidth="70.0" text="Manhattan" textFill="#a0a2ab" toggleGroup="$mode" visible="false">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="Euclidean" mnemonicParsing="false" onAction="#setMode" prefHeight="18.0" prefWidth="70.0" text="Euclidean" textFill="#a0a2ab" toggleGroup="$mode" visible="false">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+      <Text fx:id="txt0" fill="#c7c3c3" layoutX="64.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your initial state">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="time" alignment="CENTER" contentDisplay="CENTER" layoutX="537.0" layoutY="51.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="119.0" style="-fx-background-radius: 1000; -fx-background-color: #ff0040;" text="0" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Text fx:id="txt5" fill="#c7c3c3" layoutX="563.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME" visible="false">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="depth" alignment="CENTER" contentDisplay="CENTER" layoutX="407.0" layoutY="51.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="119.0" style="-fx-background-radius: 1000; -fx-background-color: #ff0040;" text="0" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Text fx:id="txt6" fill="#c7c3c3" layoutX="433.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Depth" visible="false">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="nodes" alignment="CENTER" contentDisplay="CENTER" layoutX="277.0" layoutY="51.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="119.0" style="-fx-background-radius: 1000; -fx-background-color: #ff0040;" text="0" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Text fx:id="txt7" fill="#c7c3c3" layoutX="303.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nodes" visible="false">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
